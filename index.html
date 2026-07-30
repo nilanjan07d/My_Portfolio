@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nilanjan Dutta — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── SIDEBAR ─────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">ND</div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-section="home">
+        <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+        <span>Home</span>
+      </button>
+      <button class="nav-item" data-section="projects">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <span>Projects</span>
+      </button>
+      <button class="nav-item" data-section="skills">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span>Skills</span>
+      </button>
+      <button class="nav-item" data-section="certifications">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M9 14l-3 8 6-3 6 3-3-8"/></svg>
+        <span>Certs</span>
+      </button>
+      <button class="nav-item" data-section="experience">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        <span>Experience</span>
+      </button>
+      <button class="nav-item" data-section="contact">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Contact</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>© Nilanjan Dutta</span>
+    </div>
+  </aside>
+
+  <!-- ─── MOBILE TOP BAR ───────────────────────────────────── -->
+  <header class="topbar">
+    <button class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <span class="topbar-name">Nilanjan Dutta</span>
+  </header>
+
+  <!-- ─── MAIN CONTENT ─────────────────────────────────────── -->
+  <main class="content" id="content">
+
+    <!-- HOME -->
+    <section class="page active" id="home">
+      <div class="home-grid">
+        <div class="home-text">
+          <p class="home-eyebrow">Hello, I'm</p>
+          <h1 class="home-name">Nilanjan<br/>Dutta</h1>
+          <div class="home-roles">
+            <span>Full-Stack Developer</span>
+            <span class="dot">·</span>
+            <span>AI Enthusiast</span>
+            <span class="dot">·</span>
+            <span>CS Student</span>
+          </div>
+          <p class="home-bio">
+            Final-year Computer Science Engineering student at Sister Nivedita University, Kolkata.
+            I build scalable web &amp; mobile applications, AI-powered tools, and production-ready products
+            with clean, intuitive user experiences.
+          </p>
+          <div class="home-cta">
+            <button class="btn-primary" onclick="navigate('projects')">View Projects</button>
+            <button class="btn-ghost" onclick="navigate('contact')">Get in Touch</button>
+          </div>
+          <div class="home-stats">
+            <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Projects Built</span></div>
+            <div class="stat"><span class="stat-num">3</span><span class="stat-label">Hackathons</span></div>
+            <div class="stat"><span class="stat-num">2027</span><span class="stat-label">Graduating</span></div>
+          </div>
+        </div>
+        <div class="home-visual">
+          <div class="profile-photo-wrap">
+            <img src="assets/images/photo.jpeg" alt="Nilanjan Dutta" class="profile-photo" />
+            <div class="profile-photo-placeholder">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="18" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M8 72c0-17.673 14.327-32 32-32s32 14.327 32 32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="float-badge badge-1">React Native</div>
+          <div class="float-badge badge-2">Node.js</div>
+          <div class="float-badge badge-3">AI/ML</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="page" id="projects">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <p>Things I've built — click any card to explore.</p>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Cards are rendered by js/projects.js -->
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="page" id="skills">
+      <div class="section-header">
+        <h2>Skills</h2>
+        <p>Technologies and tools I work with.</p>
+      </div>
+      <div class="skills-container" id="skillsContainer">
+        <!-- Rendered by js/skills.js -->
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="page" id="certifications">
+      <div class="section-header">
+        <h2>Certifications</h2>
+        <p>Credentials &amp; achievements — preview only.</p>
+      </div>
+      <div class="certs-grid" id="certsGrid">
+        <!-- Rendered by js/certifications.js -->
+      </div>
+
+      <!-- Certificate Modal -->
+      <div class="modal-overlay" id="certModal">
+        <div class="modal-box cert-modal-box">
+          <button class="modal-close" id="certModalClose">✕</button>
+          <h3 id="certModalTitle"></h3>
+          <div class="cert-preview-area" id="certPreviewArea">
+            <!-- Preview image shown here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="page" id="experience">
+      <div class="section-header">
+        <h2>Experience</h2>
+        <p>Where I've worked and what I've done.</p>
+      </div>
+      <div class="timeline" id="timeline">
+        <!-- Rendered by js/experience.js -->
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="page" id="contact">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>Let's build something together.</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-links">
+          <a href="https://github.com/nilanjan07d" target="_blank" class="contact-card">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            <div>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-handle">nilanjan07d</span>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="https://www.linkedin.com/in/nilanjan-dutta-5872182ab?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="contact-card">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-handle">Connect with me</span>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="mailto:nilanjandutta40@gmail.com" class="contact-card">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-handle">nilanjandutta40@gmail.com</span>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="contact-cv">
+          <div class="cv-card">
+            <div class="cv-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="cv-text">
+              <h3>My Résumé</h3>
+            </div>
+            <div class="cv-actions">
+              <button class="btn-primary" onclick="openCVModal()">
+                <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview CV
+              </button>
+              <a href="assets/cv/Resume.pdf" download="Resume.pdf" class="btn-ghost">
+                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── PROJECT DETAIL MODAL ─────────────────────────────── -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-img-wrap">
+        <img id="modalImage" src="" alt="Project screenshot" />
+      </div>
+      <div class="modal-body">
+        <span class="modal-tag" id="modalTag"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <div class="modal-tech" id="modalTech"></div>
+        <div class="modal-links">
+          <a id="modalLiveLink" href="#" target="_blank" class="btn-primary modal-btn">
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+          <a id="modalGithubLink" href="#" target="_blank" class="btn-ghost modal-btn">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            GitHub Repo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── CV PREVIEW MODAL ─────────────────────────────────── -->
+  <div class="modal-overlay" id="cvModal">
+    <div class="modal-box cv-modal-box">
+      <div class="cv-modal-header">
+        <h3>Nilanjan Dutta — Résumé</h3>
+        <div class="cv-modal-header-actions">
+          <a href="assets/cv/Resume.pdf" download="Resume.pdf" class="btn-primary modal-btn">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download
+          </a>
+          <button class="modal-close cv-modal-close" id="cvModalClose">✕</button>
+        </div>
+      </div>
+      <div class="cv-preview-frame-wrap">
+        <!-- src is set dynamically by openCVModal() to avoid blank-frame issues -->
+        <iframe
+          id="cvIframe"
+          src=""
+          class="cv-preview-frame"
+          title="Nilanjan Dutta CV Preview"
+        ></iframe>
+        <div class="cv-fallback" id="cvFallback">
+          <p>Can't preview in browser?</p>
+          <a href="assets/cv/Resume.pdf" target="_blank" class="btn-primary">Open PDF in new tab</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SCRIPTS ──────────────────────────────────────────── -->
+  <script src="js/projects.js"></script>
+  <script src="js/skills.js"></script>
+  <script src="js/certifications.js"></script>
+  <script src="js/experience.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
