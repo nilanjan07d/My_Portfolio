@@ -22,7 +22,11 @@
   --font-body:    'Inter', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
 
 body {
   font-family: var(--font-body);
@@ -137,19 +141,23 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 
 /* ── SECTIONS / PAGES ────────────────────────────────────── */
 .page {
-  display: none;
+  display: block;
   padding: 56px 64px;
   max-width: 1100px;
   min-height: 100vh;
-  animation: fadeUp 0.35s ease both;
+  height: auto;
+  animation: none;
+  opacity: 1;
+  transform: none;
+  scroll-snap-align: start;
+  margin: 0 auto;
 }
-.page.active { display: block; }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
+.page.active { 
+  /* Keep active class for backward compatibility but don't hide others */ 
 }
 
+/* Section visibility - all sections are visible, nav just scrolls to them */
 .section-header {
   margin-bottom: 48px;
 }
@@ -243,7 +251,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   height: 380px;
 }
 
-/* Wrapper — subtle accent border, no animation */
 .profile-photo-wrap {
   width: 260px;
   height: 260px;
@@ -255,7 +262,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   flex-shrink: 0;
 }
 
-/* Your actual photo — uncomment in index.html to activate */
 .profile-photo {
   width: 100%;
   height: 100%;
@@ -264,7 +270,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   display: block;
 }
 
-/* Placeholder shown until you add a real photo */
 .profile-photo-placeholder {
   width: 100%;
   height: 100%;
@@ -294,7 +299,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   color: var(--accent-light);
 }
 
-/* floating badges */
 .float-badge {
   position: absolute;
   background: var(--panel);
@@ -388,7 +392,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   background: var(--bg3);
 }
 
-/* Gradient placeholder when no image is set */
 .project-cover-placeholder {
   width: 100%;
   height: 180px;
@@ -499,7 +502,18 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   transition: border-color var(--transition), color var(--transition), transform var(--transition);
 }
 .skill-pill:hover { border-color: var(--accent); color: var(--accent-light); transform: translateY(-2px); }
-.skill-emoji { font-size: 1rem; }
+
+/* Style for Font Awesome icons in skill pills */
+.skill-pill i {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+  color: var(--accent-light);
+  flex-shrink: 0;
+}
+.skill-pill:hover i {
+  color: var(--accent-light);
+}
 
 /* ── CERTIFICATIONS ──────────────────────────────────────── */
 .certs-grid {
@@ -563,7 +577,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 .cert-preview-btn:hover { color: var(--accent-light); }
 .cert-preview-btn svg { width: 14px; height: 14px; }
 
-/* cert modal specifics */
 .cert-preview-area {
   min-height: 300px;
   background: var(--bg3);
@@ -729,7 +742,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   transform: translateX(4px);
 }
 
-/* cv download card */
 .cv-card {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -763,7 +775,12 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   line-height: 1.6;
 }
 
-.cv-download-btn { margin-top: 6px; }
+.cv-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
 
 /* ── MODAL ───────────────────────────────────────────────── */
 .modal-overlay {
@@ -873,15 +890,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 .modal-links { display: flex; gap: 12px; flex-wrap: wrap; }
 .modal-btn { padding: 11px 22px; font-size: 0.85rem; }
 
-/* cv action buttons row */
-.cv-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 4px;
-}
-
-/* ── CV PREVIEW MODAL ────────────────────────────────────── */
 .cv-modal-box {
   max-width: 860px;
   width: 95vw;
@@ -914,7 +922,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   gap: 10px;
 }
 
-/* override position:absolute on close btn inside cv modal */
 .cv-modal-close {
   position: static !important;
   flex-shrink: 0;
@@ -935,7 +942,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   display: block;
 }
 
-/* Shown if iframe fails to load the PDF */
 .cv-fallback {
   display: none;
   position: absolute;

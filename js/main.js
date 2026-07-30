@@ -1,26 +1,30 @@
 /* ════════════════════════════════════════════════════════════
-   MAIN — navigation, sidebar toggle, keyboard
+   MAIN — navigation, sidebar toggle, keyboard, auto-scroll
 ════════════════════════════════════════════════════════════ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ── SECTION NAVIGATION ────────────────────────────────── */
+  /* ── SECTION NAVIGATION with smooth scroll ────────────── */
   const navItems = document.querySelectorAll(".nav-item");
   const pages    = document.querySelectorAll(".page");
 
   function showSection(id) {
-    pages.forEach(p    => p.classList.remove("active"));
+    // Update active states
     navItems.forEach(n => n.classList.remove("active"));
+    pages.forEach(p => p.classList.remove("active"));
+
+    const targetNav = document.querySelector(`.nav-item[data-section="${id}"]`);
+    if (targetNav) targetNav.classList.add("active");
 
     const targetPage = document.getElementById(id);
     if (targetPage) {
       targetPage.classList.add("active");
-      // Scroll content area to top
-      document.querySelector(".content").scrollTo({ top: 0, behavior: "smooth" });
+      // Smooth scroll to the section
+      targetPage.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start'
+      });
     }
-
-    const targetNav = document.querySelector(`.nav-item[data-section="${id}"]`);
-    if (targetNav) targetNav.classList.add("active");
 
     // Close mobile sidebar after navigating
     document.getElementById("sidebar").classList.remove("open");
@@ -33,6 +37,40 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => showSection(btn.dataset.section));
   });
 
+  /* ── AUTO-SCROLL ON SCROLL ────────────────────────────── */
+  // Update active nav item based on scroll position
+  function updateActiveNavOnScroll() {
+    const sections = document.querySelectorAll('.page');
+    let currentSection = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute('data-section') || section.id;
+      }
+    });
+
+    if (currentSection) {
+      navItems.forEach(n => n.classList.remove('active'));
+      const activeNav = document.querySelector(`.nav-item[data-section="${currentSection}"]`);
+      if (activeNav) activeNav.classList.add('active');
+    }
+  }
+
+  // Throttled scroll listener for better performance
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    if (scrollTimeout) return;
+    scrollTimeout = setTimeout(() => {
+      updateActiveNavOnScroll();
+      scrollTimeout = null;
+    }, 100);
+  });
+
+  // Initial update
+  setTimeout(updateActiveNavOnScroll, 100);
+
   /* ── MOBILE SIDEBAR TOGGLE ─────────────────────────────── */
   const menuToggle = document.getElementById("menuToggle");
   const sidebar    = document.getElementById("sidebar");
@@ -41,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.toggle("open");
   });
 
-  // Close sidebar when clicking outside on mobile
   document.addEventListener("click", e => {
     if (
       window.innerWidth <= 900 &&
@@ -55,12 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ── CV PREVIEW MODAL ─────────────────────────────────── */
-  // CV file path — update this if you rename the file
   const CV_PATH = "assets/cv/Resume.pdf";
 
   window.openCVModal = function () {
     const iframe = document.getElementById("cvIframe");
-    // Only set src on first open to avoid reload every time
     if (!iframe.src || iframe.src === window.location.href) {
       iframe.src = CV_PATH;
     }

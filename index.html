@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
@@ -59,7 +61,7 @@
   <main class="content" id="content">
 
     <!-- HOME -->
-    <section class="page active" id="home">
+    <section class="page active snap-section" id="home" data-section="home">
       <div class="home-grid">
         <div class="home-text">
           <p class="home-eyebrow">Hello, I'm</p>
@@ -104,7 +106,7 @@
     </section>
 
     <!-- PROJECTS -->
-    <section class="page" id="projects">
+    <section class="page snap-section" id="projects" data-section="projects">
       <div class="section-header">
         <h2>Projects</h2>
         <p>Things I've built — click any card to explore.</p>
@@ -115,7 +117,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section class="page" id="skills">
+    <section class="page snap-section" id="skills" data-section="skills">
       <div class="section-header">
         <h2>Skills</h2>
         <p>Technologies and tools I work with.</p>
@@ -126,7 +128,7 @@
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section class="page" id="certifications">
+    <section class="page snap-section" id="certifications" data-section="certifications">
       <div class="section-header">
         <h2>Certifications</h2>
         <p>Credentials &amp; achievements — preview only.</p>
@@ -148,7 +150,7 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="page" id="experience">
+    <section class="page snap-section" id="experience" data-section="experience">
       <div class="section-header">
         <h2>Experience</h2>
         <p>Where I've worked and what I've done.</p>
@@ -159,7 +161,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="page" id="contact">
+    <section class="page snap-section" id="contact" data-section="contact">
       <div class="section-header">
         <h2>Contact</h2>
         <p>Let's build something together.</p>
@@ -259,7 +261,6 @@
         </div>
       </div>
       <div class="cv-preview-frame-wrap">
-        <!-- src is set dynamically by openCVModal() to avoid blank-frame issues -->
         <iframe
           id="cvIframe"
           src=""
