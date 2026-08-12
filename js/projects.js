@@ -57,7 +57,7 @@ const PROJECTS = [
   {
     id: "echo",
     title: "Echo",
-    tag: "Educational Tool",
+    tag: "Musical Tool",
     shortDesc: "Echo is designed to provide a sleek and minimal listening experience with a clean, responsive UI.",
     fullDesc: "Echo is a modern music streaming web application built with React.js and Tailwind CSS, designed to deliver a seamless and immersive listening experience. Users can discover new music, browse curated playlists, search for their favorite songs and artists, and enjoy a clean, responsive interface across devices. The project focuses on intuitive UI/UX, smooth navigation, and an engaging music discovery experience while showcasing modern frontend development practices.",
     tech: ["React.js", "Tailwind CSS", "Framer Motion", "JavaScript"],
