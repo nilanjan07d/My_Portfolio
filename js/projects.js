@@ -25,7 +25,7 @@ const PROJECTS = [
     shortDesc: "AI-powered collaborative travel journal app — create journeys, capture memories, upload photos, and share with friends.",
     fullDesc: "Memora is a full-stack cross-platform mobile application built with React Native and Expo Go. It lets users create journeys, upload photos to Cloudinary, write memory entries, and collaborate with friends in shared journals. The app features a purple-primary design system, responsive layouts for phones and tablets, and a seamless auth flow backed by Node.js and MongoDB.",
     tech: ["React Native", "Expo Go", "Node.js", "MongoDB", "Cloudinary", "TypeScript"],
-    liveLink: "https://expo.dev/accounts/nilanjan07/projects/Memora/builds/f4889fcd-6250-47fb-84cd-c9a553ce20b3",
+    liveLink: "https://expo.dev/accounts/nilanjan07/projects/Memora/builds/fd448e9d-cf72-447b-8e29-18ebec1873ef",
     githubLink: "https://github.com/nilanjan07d/Memora.git",
     coverColor: "linear-gradient(135deg, #3d2e66 0%, #7c5cbf 100%)",
     coverImage: "assets/images/memora.png"
