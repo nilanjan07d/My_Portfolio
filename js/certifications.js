@@ -31,13 +31,31 @@ const CERTIFICATIONS = [
     emoji: "🌐",
     previewImg: "assets/certificates/gdg.jpeg"
   },
+
+  {
+    id: "my-cert",
+    title: "Web Development & Designing Intern completion certificate",
+    issuer: "Oasis Infobyte",
+    date: "2026",
+    emoji: "📜",
+    previewImg: "assets/certificates/OSIB1.jpeg"
+  },
+
+  {
+    id: "my-cert",
+    title: "Certificate of Appreciation",
+    issuer: "Oasis Infobyte",
+    date: "2026",
+    emoji: "📜",
+    previewImg: "assets/certificates/OSIB2.jpeg"
+  }
   
   /* ── Add more certifications below ───────────────────────
   ,{
     id: "my-cert",
     title: "My New Certificate",
     issuer: "Issuing Organisation",
-    date: "2025",
+    date: "2026",
     emoji: "📜",
     previewImg: "assets/certificates/my-cert.jpeg"
   }

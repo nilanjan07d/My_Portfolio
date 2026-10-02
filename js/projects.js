@@ -19,6 +19,18 @@
 
 const PROJECTS = [
   {
+  id: "pizzahub",
+  title: "PizzaHub — Pizza Delivery Management System",
+  tag: "Full-Stack Web App",
+  shortDesc: "A complete pizza ordering and delivery management platform with user and admin workflows.",
+  fullDesc: "A full-stack pizza delivery management system where users can browse pizzas, customize orders, manage their cart, place orders, make payments, and track delivery status. Includes a dedicated admin panel for managing pizzas, orders, users, and the overall delivery workflow.",
+  tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Razorpay"],
+  liveLink: "https://oibsip-lovat.vercel.app/",
+  githubLink: "https://github.com/nilanjan07d/OIBSIP.git",
+  coverColor: "linear-gradient(135deg, #1a0b02 0%, #ff7a00 100%)",
+  coverImage: "assets/images/OISIB.png"
+  },
+  {
     id: "memora",
     title: "Memora",
     tag: "Mobile App",

@@ -14,6 +14,13 @@
 
 const EXPERIENCE = [
   {
+  role: "Web Development & Designing Intern",
+  org: "Oasis Infobyte — AICTE OIB-SIP",
+  date: "2026",
+  description: "Completed a 1-month internship in Web Development and Designing, contributing to projects while strengthening technical, analytical, problem-solving, and teamwork skills.",
+  tags: ["Web Development", "Web Design", "Problem Solving", "Teamwork"]
+  },
+  {
     role: "Intern — DevOps & Cloud Computing",
     org: "Employability.life × Federation University Australia (XPMC/XPro Program)",
     date: "2026",
