@@ -17,7 +17,7 @@ const EXPERIENCE = [
     role: "App Developer Intern",
     org: "Edunextg India LLP",
     date: "2026",
-    description: "Worked on developing and maintaining mobile applications using Flutter and Dart, collaborating with cross-functional teams to deliver high-quality software solutions.",
+    description: "Worked on developing and maintaining mobile applications using React Native and MySQL, collaborating with cross-functional teams to deliver high-quality software solutions.",
     tags: ["Web Development", "Database Handling", "Mobile App Development"]
   },
   {
