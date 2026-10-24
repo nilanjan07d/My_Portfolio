@@ -14,11 +14,18 @@
 
 const EXPERIENCE = [
   {
-  role: "Web Development & Designing Intern",
-  org: "Oasis Infobyte — AICTE OIB-SIP",
-  date: "2026",
-  description: "Completed a 1-month internship in Web Development and Designing, contributing to projects while strengthening technical, analytical, problem-solving, and teamwork skills.",
-  tags: ["Web Development", "Web Design", "Problem Solving", "Teamwork"]
+    role: "App Developer Intern",
+    org: "Edunextg India LLP",
+    date: "2026",
+    description: "Worked on developing and maintaining mobile applications using Flutter and Dart, collaborating with cross-functional teams to deliver high-quality software solutions.",
+    tags: ["Web Development", "Database Handling", "Mobile App Development"]
+  },
+  {
+    role: "Web Development & Designing Intern",
+    org: "Oasis Infobyte — AICTE OIB-SIP",
+    date: "2026",
+    description: "Completed a 1-month internship in Web Development and Designing, contributing to projects while strengthening technical, analytical, problem-solving, and teamwork skills.",
+    tags: ["Web Development", "Web Design", "Problem Solving", "Teamwork"]
   },
   {
     role: "Intern — DevOps & Cloud Computing",
